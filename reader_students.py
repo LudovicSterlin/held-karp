@@ -42,13 +42,13 @@ def file_to_points(filename):
 
 
 def file_to_graph(filename):
-    """Read and parse a .txt file and return a nx.Graph generated from the data
+    """"Read and parse a .txt file and return a nx.Graph generated from the data
 
     Args:
         filename (str): The path to the .txt file containing the data on the cities
 
     Returns:
-        nx.Graph: The graph generated from the .txt file
+        (nx.Graph, Points[]): The graph generated from the .txt file, The list of points found in the .txt file
     """
     print(f"\nExtracting graph from {filename} ...")
     points = file_to_points(filename)
@@ -65,4 +65,5 @@ def file_to_graph(filename):
             weight = distance(points[i], points[j])
             g.add_edge(i,j, weight=weight)
 
-    return g
+    # return g
+    return (g, points)
