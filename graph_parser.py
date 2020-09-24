@@ -1,5 +1,4 @@
-"""A simple reader for data file for TSP problem"""
-
+"""A parser that transform data in tspXX.txt file into nx.Graph for TSP problem"""
 
 import sys
 from math import sqrt
@@ -14,7 +13,6 @@ class Point:
 
     def __repr__(self):
         return f"Point({self.x:.1f},{self.y:.1f})"
-
 
 def distance(a, b):
     return sqrt((a.x-b.x)**2+(a.y-b.y)**2)
@@ -39,7 +37,6 @@ def file_to_points(filename):
             AssertionError("Number of vertices found is different from expected")
         
         return points
-
 
 def file_to_graph(filename):
     """"Read and parse a .txt file and return a nx.Graph generated from the data
